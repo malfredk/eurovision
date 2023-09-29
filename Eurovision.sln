@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eurovision.Client", "Eurovision.Client\Eurovision.Client.csproj", "{6F6485FF-8F8C-4694-BC43-12EDC8D5212B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eurovision.API", "Eurovision.API\Eurovision.API.csproj", "{69EF645C-68D4-47AD-8DA2-BFC23E4E481C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eurovision.DTO", "Eurovision.DTO\Eurovision.DTO.csproj", "{A45C7B10-97FF-490C-8FE8-0D11C8C0D334}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eurovision.Entity", "Eurovision.Entity\Eurovision.Entity.csproj", "{D8C3D2B0-14E8-40FC-8779-D25DCFCCE7C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F6485FF-8F8C-4694-BC43-12EDC8D5212B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F6485FF-8F8C-4694-BC43-12EDC8D5212B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F6485FF-8F8C-4694-BC43-12EDC8D5212B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F6485FF-8F8C-4694-BC43-12EDC8D5212B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69EF645C-68D4-47AD-8DA2-BFC23E4E481C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69EF645C-68D4-47AD-8DA2-BFC23E4E481C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69EF645C-68D4-47AD-8DA2-BFC23E4E481C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69EF645C-68D4-47AD-8DA2-BFC23E4E481C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A45C7B10-97FF-490C-8FE8-0D11C8C0D334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A45C7B10-97FF-490C-8FE8-0D11C8C0D334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A45C7B10-97FF-490C-8FE8-0D11C8C0D334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A45C7B10-97FF-490C-8FE8-0D11C8C0D334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8C3D2B0-14E8-40FC-8779-D25DCFCCE7C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8C3D2B0-14E8-40FC-8779-D25DCFCCE7C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8C3D2B0-14E8-40FC-8779-D25DCFCCE7C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8C3D2B0-14E8-40FC-8779-D25DCFCCE7C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {15B23C57-C1EA-474E-B498-9A48875BB275}
+	EndGlobalSection
+EndGlobal
