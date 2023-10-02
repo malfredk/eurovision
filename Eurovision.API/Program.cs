@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Eurovision.API.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<EurovisionAPIContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("EurovisionAPIContext") ?? throw new InvalidOperationException("Connection string 'EurovisionAPIContext' not found.")));
 
 // Add services to the container.
 
