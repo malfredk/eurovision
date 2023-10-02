@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Eurovision.API;
 using Eurovision.API.Data;
-using Eurovision.Entity;
 using Eurovision.DTO;
 
 namespace Eurovision.API.Controllers;
