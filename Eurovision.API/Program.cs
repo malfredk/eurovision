@@ -1,9 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Eurovision.API.Data;
+using Eurovision.API.Repository.Contract;
+using Eurovision.API.Repository;
+
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<EurovisionAPIContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("EurovisionAPIContext") ?? throw new InvalidOperationException("Connection string 'EurovisionAPIContext' not found.")));
+builder.Services.AddDbContext<EurovisionDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("EurovisionDbContext") ?? throw new InvalidOperationException("Connection string 'EurovisionDbContext' not found.")));
 
 // Add services to the container.
 
@@ -11,6 +13,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
+builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
 
 var app = builder.Build();
 

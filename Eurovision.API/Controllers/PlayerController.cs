@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using Eurovision.API;
 using Eurovision.API.Data;
 using Eurovision.DTO;
+using Eurovision.API.Repository.Contract;
+using AutoMapper;
 
 namespace Eurovision.API.Controllers;
 
@@ -15,22 +17,38 @@ namespace Eurovision.API.Controllers;
 [ApiController]
 public class PlayerController : ControllerBase
 {
-    private readonly EurovisionAPIContext _context;
+    private readonly IPlayerRepository _repository;
+    private readonly IMapper _mapper;
 
-    public PlayerController(EurovisionAPIContext context)
+    public PlayerController(IPlayerRepository repository,
+                            IMapper mapper)
     {
-        _context = context;
+        this._repository = repository;
+        this._mapper = mapper;
     }
 
     // GET: api/Player
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Player>>> GetPlayer()
+    public async Task<ActionResult<IEnumerable<Player>>> GetPlayers()
     {
-      if (_context.PlayerEntity == null)
-      {
-          return NotFound();
-      }
-        return await _context.PlayerEntity.ToListAsync();
+        try
+        {
+            var players = await this._repository.GetPlayers();
+
+            if (players == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(players.Select(player => _mapper.Map<Player>(player)));
+            }
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
     }
 
     // GET: api/Player/5
