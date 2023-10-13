@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Eurovision.DTO;
-using Eurovision.Entity;
+using Eurovision.Entity.Models.Player;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Eurovision.API.Mapper;

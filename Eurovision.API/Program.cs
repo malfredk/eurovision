@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Eurovision.API.Data;
 using Eurovision.API.Repository.Contract;
 using Eurovision.API.Repository;
+using Eurovision.Entity.DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<EurovisionDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("EurovisionDbContext") ?? throw new InvalidOperationException("Connection string 'EurovisionDbContext' not found.")));
+builder.Services.AddDbContext<PlayerDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PlayerDbContext") ?? throw new InvalidOperationException("Connection string 'EurovisionDbContext' not found.")));
 
 // Add services to the container.
 
@@ -26,7 +26,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 

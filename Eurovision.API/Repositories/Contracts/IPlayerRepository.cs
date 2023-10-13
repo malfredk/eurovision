@@ -1,10 +1,12 @@
-﻿using Eurovision.Entity;
+﻿using Eurovision.Entity.Models.Player;
 
 namespace Eurovision.API.Repository.Contract;
 
 public interface IPlayerRepository
 {
-    Task<IEnumerable<PlayerEntity>> GetPlayers();
-    Task<PlayerEntity> GetPlayer(string userName);
-    Task<PlayerEntity> UpdatePlayer(PlayerEntity player);
+    IEnumerable<PlayerEntity> GetPlayers();
+    PlayerEntity GetPlayer(int id);
+    PlayerEntity GetPlayer(string userName);
+    bool UpdateCountryRating(CountryRatingEntity countryRating);
+    PlayerEntity? CreatePlayer(string userName);
 }

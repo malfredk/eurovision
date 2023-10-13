@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Eurovision.API;
-using Eurovision.API.Data;
+﻿using Microsoft.AspNetCore.Mvc;
 using Eurovision.DTO;
 using Eurovision.API.Repository.Contract;
 using AutoMapper;
@@ -29,11 +21,11 @@ public class PlayerController : ControllerBase
 
     // GET: api/Player
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Player>>> GetPlayers()
+    public ActionResult<IEnumerable<Player>> GetPlayers()
     {
         try
         {
-            var players = await this._repository.GetPlayers();
+            var players = _repository.GetPlayers();
 
             if (players == null)
             {
@@ -46,16 +38,17 @@ public class PlayerController : ControllerBase
         }
         catch (Exception)
         {
-
             throw;
         }
     }
 
+    /*
+
     // GET: api/Player/5
     [HttpGet("{id}")]
-    public async Task<ActionResult<Player>> GetPlayer(int id)
+    public ActionResult<Player> GetPlayer(int id)
     {
-      if (_context.PlayerEntity == null)
+      if (.PlayerEntity == null)
       {
           return NotFound();
       }
@@ -139,4 +132,5 @@ public class PlayerController : ControllerBase
     {
         return (_context.PlayerEntity?.Any(e => e.Id == id)).GetValueOrDefault();
     }
+    */
 }
